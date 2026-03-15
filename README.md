@@ -22,7 +22,8 @@ Sua assistente para WhatsApp: stickers, revelação de mídias e várias utilida
 
 ## 🌸 O que é a Hermione Bot?
 
-A **Hermione Bot** é uma assistente para WhatsApp com personalidade inspirada em animes — fofa, eficiente e repleta de funcionalidades. Desenvolvida sobre a biblioteca [Baileys](https://github.com/WhiskeySockets/Baileys), ela se conecta ao seu WhatsApp de forma nativa: **sem APIs pagas, sem números secundários e sem burocracia**. Basta escanear o QR Code e a magia acontece. ✨
+**Hermione Bot** é uma assistente para WhatsApp com personalidade inspirada em animes, fofa, eficiente e repleta de funcionalidades. Desenvolvida com [Baileys](https://github.com/WhiskeySockets/Baileys), conecta direto ao seu WhatsApp **sem API paga, sem número extra e sem burocracia**. Só o QR Code e a magia começa. ✨
+Ela cria **stickers** instantâneos, revela **mídias de visualização única**, expõe a **foto de perfil de qualquer membro de grupo**, realiza **consultas OSINT de IP com geolocalização** e muito mais, tudo via comandos simples no chat.
 
 É o projeto ideal para quem busca automatizar tarefas, gerenciar grupos ou simplesmente ter uma assistente inteligente para uso pessoal.
 
