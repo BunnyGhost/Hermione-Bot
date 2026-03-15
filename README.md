@@ -674,22 +674,35 @@ git push origin feat/nome-da-feature
 
 <br/>
 
-<div align="center">
+---
 
-*₍₍⚞(˶>⩊<˶)⚟⁾⁾  Obrigada por usar a Hermione! Espero ter ajudado, nya~  🪄*
 
-<br/>
+## 💜 Agradecimentos & Considerações Finais
 
-**Feito com 💜 por [Bunny Ghost](https://github.com/BunnyGhost)**
+A Hermione Bot só existe graças à incrível comunidade open source que transforma ideias em realidade — tudo isso de graça e com muito carinho.
 
-Se o projeto te ajudou, uma ⭐ no repositório significa muito!
+Um obrigado gigante e sincero vai para:
 
-[![Star this repo](https://img.shields.io/github/stars/BunnyGhost/Hermione-Bot?style=social)](https://github.com/BunnyGhost/Hermione-Bot)
+- Todos os mantenedores e contribuidores que mantêm projetos vivos por pura paixão  
+- A equipe do **Baileys** (e suas forks incansáveis) — os verdadeiros magos por trás da conexão sem API paga  
+- Os criadores de **wa-sticker-formatter**, **sharp**, **fluent-ffmpeg**, **axios** e tantas outras bibliotecas que dão vida às figurinhas, vídeos e respostas instantâneas  
+- Toda a comunidade **Node.js / JavaScript**, que mantém esse ecossistema poderoso, atualizado e acessível a todos  
+- E especialmente a **você**, que chegou até aqui, testou, usou, deu estrela ou apenas sorriu com uma resposta da Hermione ♡
 
-<br/>
+Projetos como esse sobrevivem porque existem pessoas que compartilham conhecimento, corrigem bugs às 3 da manhã e mantêm repositórios pulsando por amor (e um pouquinho de teimosia saudável).
 
-```
-  ₊˚ʚ  ᗢ₊˚✧ ﾟ.   🪄  ₊˚ʚ  ᗢ₊˚✧ ﾟ.   🪄  ₊˚ʚ  ᗢ₊˚✧ ﾟ.
-```
+Espero que as explicações tenham sido claras e fáceis de seguir.  
+Sempre priorizo simplificar ao máximo e adicionar **muitos comentários no código** para que qualquer pessoa — mesmo quem está começando agora — consiga entender cada linha e se sentir confortável para mexer.
 
-</div>
+Obrigado de coração por terem acompanhado, testado, quebrado coisas e comemorado cada acerto até aqui.
+
+Agora é a sua vez de fazer mágica:  
+- mexa no código sem medo  
+- crie variações (quanto mais loucas, melhor)  
+- transforme o que aprendeu em bots, comandos e ideias só suas  
+
+Divirtam-se bastante no processo (mas tentem dormir um pouco também, hein? 😅)
+
+Bons estudos, boas criações e até a próxima aventura!
+
+Abraços mágicos! 🪄✨
