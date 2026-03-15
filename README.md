@@ -38,21 +38,20 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 <tr>
 <td valign="top">
 
-|🐰 | Seção | Descrição |
+| `#` | Seção | Descrição |
 |:---:|:---|:---|
-| 🍬 | **[Instalação de Dependências](#-passo-1--instalar-as-dependências)** | Instalando Node.js, Git e npm do zero |
-| 📦 | **[Baixar o Projeto](#-passo-2--baixar-o-projeto)** | Clonando o repositório e instalando os pacotes |
-| ▶️ | **[Iniciar a Hermione](#️-passo-3--iniciar-a-hermione)** | Rodando o bot e conectando via QR Code |
-| ⚙️ | **[Configuração](#️-configuração)** | Prefixo, nome do bot e imagens necessárias |
-| ✨ | **[Recursos](#-recursos)** | Tudo que a Hermione é capaz de fazer |
-| 🔮 | **[Comandos](#-comandos)** | Lista completa de comandos disponíveis |
-| 📂 | **[Estrutura do Projeto](#-estrutura-do-projeto)** | Organização de pastas e arquivos |
-| 🚀 | **[Manter Online 24/7](#-manter-o-bot-online-247)** | Rodando em segundo plano com PM2 |
-| 🌙 | **[Resetar Sessão](#-resetar-a-sessão)** | Deslogar e conectar outra conta |
-| 🌺 | **[Solução de Problemas](#-solução-de-problemas)** | Erros comuns e como resolver |
-| 🤝 | **[Como Contribuir](#-como-contribuir)** | Fork, branch e Pull Request |
-| 📬 | **[Contato e Suporte](#-contato-e-suporte)** | GitHub e reportar bugs |
-
+| `01` | **[Instalação de Dependências](#-passo-1--instalar-as-dependências)** | Instalando Node.js, Git e npm do zero |
+| `02` | **[Baixar o Projeto](#-passo-2--baixar-o-projeto)** | Clonando o repositório e instalando os pacotes |
+| `03` | **[Iniciar a Hermione](#️-passo-3--iniciar-a-hermione)** | Rodando o bot e conectando via QR Code |
+| `04` | **[Configuração](#️-configuração)** | Prefixo, nome do bot e imagens necessárias |
+| `05` | **[Recursos](#-recursos)** | Tudo que a Hermione é capaz de fazer |
+| `06` | **[Comandos](#-comandos)** | Lista completa de comandos disponíveis |
+| `07` | **[Estrutura do Projeto](#-estrutura-do-projeto)** | Organização de pastas e arquivos |
+| `08` | **[Manter Online 24/7](#-manter-o-bot-online-247)** | Rodando em segundo plano com PM2 |
+| `09` | **[Resetar Sessão](#-resetar-a-sessão)** | Deslogar e conectar outra conta |
+| `10` | **[Solução de Problemas](#-solução-de-problemas)** | Erros comuns e como resolver |
+| `11` | **[Como Contribuir](#-como-contribuir)** | Fork, branch e Pull Request |
+| `12` | **[Contato e Suporte](#-contato-e-suporte)** | GitHub e reportar bugs |
 </td>
 <td align="center" valign="middle">
 
