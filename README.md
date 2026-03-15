@@ -683,26 +683,27 @@ A Hermione Bot só existe graças à incrível comunidade open source que transf
 
 Um obrigado gigante e sincero vai para:
 
-- Todos os mantenedores e contribuidores que mantêm projetos vivos por pura paixão  
-- A equipe do **Baileys** (e suas forks incansáveis) — os verdadeiros magos por trás da conexão sem API paga  
-- Os criadores de **wa-sticker-formatter**, **sharp**, **fluent-ffmpeg**, **axios** e tantas outras bibliotecas que dão vida às figurinhas, vídeos e respostas instantâneas  
-- Toda a comunidade **Node.js / JavaScript**, que mantém esse ecossistema poderoso, atualizado e acessível a todos  
+- Todos os mantenedores e contribuidores que mantêm projetos vivos por pura paixão
+- A equipe do **Baileys** (e suas forks incansáveis) — os verdadeiros magos por trás da conexão sem API paga
+- Os criadores de **wa-sticker-formatter**, **sharp**, **fluent-ffmpeg**, **axios** e tantas outras bibliotecas que dão vida às figurinhas, vídeos e respostas instantâneas
+- Toda a comunidade **Node.js / JavaScript**, que mantém esse ecossistema poderoso, atualizado e acessível a todos
 - E especialmente a **você**, que chegou até aqui, testou, usou, deu estrela ou apenas sorriu com uma resposta da Hermione ♡
 
 Projetos como esse sobrevivem porque existem pessoas que compartilham conhecimento, corrigem bugs às 3 da manhã e mantêm repositórios pulsando por amor (e um pouquinho de teimosia saudável).
 
 Espero que as explicações tenham sido claras e fáceis de seguir.  
-Sempre priorizo simplificar ao máximo e adicionar **muitos comentários no código** para que qualquer pessoa — mesmo quem está começando agora — consiga entender cada linha e se sentir confortável para mexer.
+Sempre priorizo simplificar ao máximo e adicionar **muitos comentários no código** para que qualquer pessoa (mesmo quem está começando agora) consiga entender cada linha e se sentir confortável para mexer.
 
 Obrigado de coração por terem acompanhado, testado, quebrado coisas e comemorado cada acerto até aqui.
 
-Agora é a sua vez de fazer mágica:  
-- mexa no código sem medo  
-- crie variações (quanto mais loucas, melhor)  
-- transforme o que aprendeu em bots, comandos e ideias só suas  
+Agora é a sua vez de fazer mágica:
+
+- mexa no código sem medo
+- crie variações (quanto mais loucas, melhor)
+- transforme o que aprendeu em bots, comandos e ideias só suas
 
 Divirtam-se bastante no processo (mas tentem dormir um pouco também, hein? 😅)
 
-Bons estudos, boas criações e até a próxima aventura!
+Bons estudos e até a próxima, guys!
 
-Abraços mágicos! 🪄✨
+Abraços!
