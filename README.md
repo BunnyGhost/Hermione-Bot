@@ -32,7 +32,35 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 
 ---
 
+# 📖 Sumário
 
+<table>
+<tr>
+<td valign="top">
+
+|🐰 | Seção | Descrição |
+|:---:|:---|:---|
+| 🍬 | **[Instalação de Dependências](#-passo-1--instalar-as-dependências)** | Instalando Node.js, Git e npm do zero |
+| 📦 | **[Baixar o Projeto](#-passo-2--baixar-o-projeto)** | Clonando o repositório e instalando os pacotes |
+| ▶️ | **[Iniciar a Hermione](#️-passo-3--iniciar-a-hermione)** | Rodando o bot e conectando via QR Code |
+| ⚙️ | **[Configuração](#️-configuração)** | Prefixo, nome do bot e imagens necessárias |
+| ✨ | **[Recursos](#-recursos)** | Tudo que a Hermione é capaz de fazer |
+| 🔮 | **[Comandos](#-comandos)** | Lista completa de comandos disponíveis |
+| 📂 | **[Estrutura do Projeto](#-estrutura-do-projeto)** | Organização de pastas e arquivos |
+| 🚀 | **[Manter Online 24/7](#-manter-o-bot-online-247)** | Rodando em segundo plano com PM2 |
+| 🌙 | **[Resetar Sessão](#-resetar-a-sessão)** | Deslogar e conectar outra conta |
+| 🌺 | **[Solução de Problemas](#-solução-de-problemas)** | Erros comuns e como resolver |
+| 🤝 | **[Como Contribuir](#-como-contribuir)** | Fork, branch e Pull Request |
+| 📬 | **[Contato e Suporte](#-contato-e-suporte)** | GitHub e reportar bugs |
+
+</td>
+<td align="center" valign="middle">
+
+<img src="https://i.pinimg.com/originals/0d/38/be/0d38be44cc641fc070b6bfb5c5faded7.gif" width="100%" alt="Hermione Bot" />
+
+</td>
+</tr>
+</table>
 
 ## 🍬 Passo 1 — Instalar as Dependências
 
