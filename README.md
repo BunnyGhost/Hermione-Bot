@@ -55,7 +55,7 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 </td>
  <tr>
     <td align="center" valign="middle">
-      <img src="https://i.pinimg.com/originals/0d/38/be/0d38be44cc641fc070b6bfb5c5faded7.gif" width="50%" alt="Hermione Bot" />
+      <img src="https://i.pinimg.com/originals/b1/b0/18/b1b0188f04fe370e6a4632690d7de640.gif" width="100%" alt="Hermione Bot" />
     </td>
   </tr>
 </tr>
