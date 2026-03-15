@@ -53,11 +53,11 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 | `11` | **[Como Contribuir](#-como-contribuir)** | Fork, branch e Pull Request |
 | `12` | **[Contato e Suporte](#-contato-e-suporte)** | GitHub e reportar bugs |
 </td>
-<td align="center" valign="middle">
-
-<img src="https://i.pinimg.com/originals/0d/38/be/0d38be44cc641fc070b6bfb5c5faded7.gif" width="100%" alt="Hermione Bot" />
-
-</td>
+ <tr>
+    <td align="center" valign="middle">
+      <img src="https://i.pinimg.com/originals/0d/38/be/0d38be44cc641fc070b6bfb5c5faded7.gif" width="50%" alt="Hermione Bot" />
+    </td>
+  </tr>
 </tr>
 </table>
 
