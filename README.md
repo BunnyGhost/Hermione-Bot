@@ -280,6 +280,16 @@ Após escanear, o terminal vai exibir o banner e começar a logar as mensagens e
 [14:23:15]  Privado   Você              5511999999999   →  /s
 ```
 
+ ## Pronto agora Hermione Bot já esta rodando!
+ 
+<p align="center">
+  <img 
+    src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWN5OGU0cDFxN2YweHk1OWU0NG4xaXJxcGtxbmJwbGM2d2wwYjJtZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/LML5ldpTKLPelFtBfY/giphy.webp" 
+    alt="Rodando"
+    style="max-width:100%; height:auto; border-radius:10px;"
+  />
+</p>
+
 > ✅ **Da segunda vez em diante**, a Hermione se conecta sozinha — sem precisar escanear de novo! A sessão fica salva na pasta `auth_info_baileys/`.
 
 > 💡 Todos os logs são coloridos no terminal graças ao `chalk` — fica fácil de acompanhar tudo em tempo real!
@@ -291,6 +301,19 @@ Conexão encerrada. Reconectando em 3s...
 ```
 
 **Para encerrar o bot:** pressione `Ctrl + C` no terminal.
+
+* Agora vamos para a parte teórica da configuração para entender melhor tudo o que está acontecendo. Não se preocupe se parecer muita informação no início. Organizei o conteúdo da forma mais intuitiva possível. Leia com atenção, pois esse conhecimento pode ajudar caso algo dê errado e você precise resolver sozinho hehe. então leia
+
+  <p align="center">
+  <img 
+    src="https://media1.tenor.com/m/y9uy-tXR7QUAAAAd/adult-magazine-chika.gif" 
+    alt="Demo do projeto"
+    style="max-width:100%; height:auto; border-radius:10px;"
+  />
+</p>
+
+<br>
+
 ## ⚙️ Configuração
 
 Abra o arquivo `src/config.js` em qualquer editor de texto (Notepad, VS Code, etc.) e edite:
