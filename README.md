@@ -1,41 +1,37 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=FF79C6&center=true&vCenter=true&width=600&lines=⠀;✦+Hermione+Bot+✦;Sua+assistente+mágica+no+WhatsApp;by+Bunny+Ghost+🐰;⠀" alt="Hermione Bot" />
+<img src="https://i.pinimg.com/originals/37/d7/29/37d729ae35622b8fc8de12835a502dec.gif" width="260" alt="Hermione Bot" />
 
-<br/>
+# ✦ Hermione Bot ✦
 
-[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
-[![Baileys](https://img.shields.io/badge/Baileys-Multi--Device-8B5CF6?style=for-the-badge&logo=whatsapp&logoColor=white)](https://github.com/WhiskeySockets/Baileys)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/BunnyGhost/Hermione-Bot)
-[![License](https://img.shields.io/badge/License-MIT-ec4899?style=for-the-badge)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/BunnyGhost/Hermione-Bot?style=for-the-badge&color=ec4899)](https://github.com/BunnyGhost/Hermione-Bot/stargazers)
+<p align="center">
+  <i>₍₍⚞(˶>⩊<˶)⚟⁾⁾ Nya~! Olá, eu sou a Hermione!</i><br/>
+  Sua assistente mágica no WhatsApp — stickers, mídias secretas e muito mais! 🪄
+</p>
 
-<br/>
+[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=bd93f9)](https://nodejs.org)
+[![Baileys](https://img.shields.io/badge/Baileys-Multi--Device-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=bd93f9)](https://github.com/WhiskeySockets/Baileys)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=bd93f9)](https://github.com/BunnyGhost/Hermione-Bot)
+[![License](https://img.shields.io/badge/License-MIT-FF79C6?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=bd93f9)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/BunnyGhost/Hermione-Bot?style=for-the-badge&logo=starship&logoColor=white&labelColor=bd93f9&color=FF79C6)](https://github.com/BunnyGhost/Hermione-Bot/stargazers)
 
-> *₍₍⚞(˶>⩊<˶)⚟⁾⁾  Nya~! Olá, eu sou a Hermione — sua assistente mágica no WhatsApp!*  
-> *Stickers, mídias secretas, botões interativos... tudo com um toque de magia! 🪄*
-
-<br/>
 
 </div>
 
 ---
 
-<br/>
-
 ## 🌸 O que é a Hermione Bot?
 
-**Hermione Bot** é um bot para WhatsApp com personalidade de garota de anime — fofa, eficiente e cheia de recursos! Construída em cima da biblioteca [Baileys](https://github.com/WhiskeySockets/Baileys), ela conecta ao WhatsApp **sem número secundário, sem API paga e sem complicação**: só um QR Code e ela está online. ✨
+A **Hermione Bot** é uma assistente para WhatsApp com personalidade inspirada em animes — fofa, eficiente e repleta de funcionalidades. Desenvolvida sobre a biblioteca [Baileys](https://github.com/WhiskeySockets/Baileys), ela se conecta ao seu WhatsApp de forma nativa: **sem APIs pagas, sem números secundários e sem burocracia**. Basta escanear o QR Code e a magia acontece. ✨
 
-Ideal para quem quer aprender a criar bots, automatizar tarefas no WhatsApp ou simplesmente ter uma assistente mágica para uso pessoal.
+É o projeto ideal para quem busca automatizar tarefas, gerenciar grupos ou simplesmente ter uma assistente inteligente para uso pessoal.
 
-> 💡 **Nunca programou antes?** Sem pânico! Esse README foi escrito pensando em você. Siga os passos na ordem e tudo vai funcionar ~
-
-<br/>
+> [!TIP]
+>  Nunca programou antes? Sem pânico. Este README foi escrito pensando em você. Siga os passos na ordem e tudo vai funcionar. O código também está comentado intencionalmente para facilitar o entendimento. ~
 
 ---
 
-<br/>
+
 
 ## 🍬 Passo 1 — Instalar as Dependências
 
