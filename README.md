@@ -61,6 +61,8 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 </tr>
 </table>
 
+<br/>
+
 ## 🍬 Passo 1 — Instalar as Dependências
 
 > Essas são as ferramentas que precisam estar instaladas no seu computador **antes** de qualquer coisa.  
