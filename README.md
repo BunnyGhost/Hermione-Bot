@@ -12,7 +12,7 @@ Sua assistente para WhatsApp: stickers, revelação de mídias e várias utilida
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=bd93f9)](https://nodejs.org)
 [![Baileys](https://img.shields.io/badge/Baileys-Multi--Device-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=bd93f9)](https://github.com/WhiskeySockets/Baileys)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=bd93f9)](https://github.com/BunnyGhost/Hermione-Bot)
-[![License](https://img.shields.io/badge/License-MIT-FF79C6?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=bd93f9)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-FF79C6?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=bd93f9)](LICENSE.md)
 [![Stars](https://img.shields.io/github/stars/BunnyGhost/Hermione-Bot?style=for-the-badge&logo=starship&logoColor=white&labelColor=bd93f9&color=FF79C6)](https://github.com/BunnyGhost/Hermione-Bot/stargazers)
 
 
