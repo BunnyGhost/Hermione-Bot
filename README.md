@@ -375,7 +375,7 @@ A pasta `src/assets/` precisa ter esses arquivos:
 ```
 src/assets/
 ├── menu2.jpg     →  imagem exibida no /menu
-├── flor1.jpeg    →  thumbnail do link preview
+├── tumb.jpeg    →  thumbnail do link preview
 └── image.png     →  foto de apresentação do /bot
 ```
 
