@@ -52,6 +52,7 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 | `10` | **[Solução de Problemas](#-solução-de-problemas)** | Erros comuns e como resolver |
 | `11` | **[Como Contribuir](#-como-contribuir)** | Fork, branch e Pull Request |
 | `12` | **[Contato e Suporte](#-contato-e-suporte)** | GitHub e reportar bugs |
+| `13` | **[Agradecimentos](#-Agradecimentos-&-Considerações-Finais)** |Agradecimentos notas finais |
 </td>
  <tr>
     <td align="center" valign="middle">
