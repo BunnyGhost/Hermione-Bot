@@ -52,7 +52,7 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 | `10` | **[Solução de Problemas](#-solução-de-problemas)** | Erros comuns e como resolver |
 | `11` | **[Como Contribuir](#-como-contribuir)** | Fork, branch e Pull Request |
 | `12` | **[Contato e Suporte](#-contato-e-suporte)** | GitHub e reportar bugs |
-| `13` | **[Agradecimentos](#-Agradecimentos-&-Considerações-Finais)** |Agradecimentos notas finais |
+| `13` | **[Agradecimentos](#agradecimentos)**       | Considerações finais e agradecimentos |
 </td>
  <tr>
     <td align="center" valign="middle">
@@ -680,7 +680,7 @@ git push origin feat/nome-da-feature
 ---
 
 
-## 💜 Agradecimentos & Considerações Finais
+## 💜  Agradecimentos
 
 A Hermione Bot só existe graças à incrível comunidade open source que transforma ideias em realidade — tudo isso de graça e com muito carinho.
 
