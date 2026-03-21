@@ -391,17 +391,15 @@ src/assets/
 
 | | Recurso | Descrição |
 |---|---|---|
-| 🖼️ | **Stickers instantâneos** | Transforma qualquer imagem em figurinha do WhatsApp |
-| 🔓 | **Desbloqueio de mídias** | Visualiza fotos e vídeos de "ver uma vez" normalmente |
+| 🖼️ | **Stickers instantâneos** | Converte imagens e vídeos em figurinhas do WhatsApp |
+| 🔓 | **Desbloqueio de mídias** | Converte mídias de visualização única em mídias normais |
 | 🌀 | **Botões interativos** | Menus clicáveis nativos do WhatsApp |
-| 🎵 | **Envio de áudio** | Envia áudios direto pelo bot |
-| 👤 | **Info de usuário** | Mostra dados do contato ou do grupo |
-| 📇 | **Envio de contato** | Compartilha contatos no formato vCard |
-| 🔮 | **Texto invisível** | Mensagens com caracteres ocultos |
+| 🎵 | **Envio de áudio** | Envia áudios diretamente pelo bot |
+| 📇 | **Foto do perfil** | Envia a foto de perfil do usuário marcado |
+| 🌐 | **Consulta OSINT** | Consulta informações básicas de um IP |
 | 🎨 | **Painel no terminal** | Interface colorida com logs em tempo real |
-| ⚡ | **Reconexão automática** | Se cair, reconecta sozinha |
-| 🧩 | **Modular e extensível** | Fácil de adicionar novos comandos |
-
+| ⚡ | **Reconexão automática** | Reconecta automaticamente se a conexão cair |
+| 🧩 | **Modular e extensível** | Estrutura fácil para adicionar novos comandos |
 <br/>
 
 ---
@@ -414,15 +412,15 @@ src/assets/
 
 | Comando | O que faz |
 |---|---|
-| `/bot` | Apresentação da Hermione com menu de botões interativos |
-| `/menu` | Exibe o menu visual completo com imagem |
-| `/ping` | Mede a velocidade de resposta do bot |
-| `/s` | Converte a imagem enviada em figurinha |
-| `/au` | Envia um áudio pelo bot |
-| `/hidden` | Envia mensagem com caracteres invisíveis |
-| `/who` | Mostra informações do seu perfil ou do grupo |
-| `/ctt` | Envia um contato no formato vCard |
-| `/infos` | Informações técnicas sobre o bot |
+| `/bot` | Exibe a apresentação da Hermione com menu interativo |
+| `/menu` | Mostra o menu visual completo |
+| `/ping` | Exibe o tempo de resposta do bot |
+| `/s` | Converte a mídia em figurinha |
+| `/au` | Envia um áudio |
+| `/hidden` | Converte mídia de visualização única em mídia normal |
+| `/who` | Consulta dados de registro (Whois) de um IP |
+| `/ctt` | Envia a foto de perfil do usuário mencionado |
+| `/infos` | Exibe informações técnicas do bot |
 
 <br/>
 
