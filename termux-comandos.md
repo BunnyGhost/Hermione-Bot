@@ -40,7 +40,17 @@ pkg install git nodejs ffmpeg imagemagick -y
 
 <br/>
 
-### 3. Clonar o repositório
+### 3. Instalar o exibidor de QR Code
+
+Instala globalmente o pacote responsável por renderizar o QR Code direto no terminal na primeira execução.
+
+```bash
+npm install -g qrcode-terminal
+```
+
+<br/>
+
+### 4. Clonar o repositório
 
 Baixa o código-fonte do bot do GitHub para o seu dispositivo.
 
@@ -50,7 +60,7 @@ git clone https://github.com/BunnyGhost/Hermione-Bot.git
 
 <br/>
 
-### 4. Entrar na pasta do projeto
+### 5. Entrar na pasta do projeto
 
 Todos os comandos seguintes devem ser executados dentro deste diretório.
 
@@ -60,7 +70,7 @@ cd Hermione-Bot
 
 <br/>
 
-### 5. Instalar os módulos — primeira passagem
+### 6. Instalar os módulos — primeira passagem
 
 O Termux restringe a execução de scripts nativos durante o `npm install`. Esta flag contorna isso e evita erros de compilação.
 
@@ -70,7 +80,7 @@ npm install --ignore-scripts
 
 <br/>
 
-### 6. Instalar os módulos — passagem completa
+### 7. Instalar os módulos — passagem completa
 
 Conclui a instalação de todas as dependências do projeto.
 
@@ -80,7 +90,7 @@ npm install
 
 <br/>
 
-### 7. Iniciar o bot
+### 8. Iniciar o bot
 
 ```bash
 npm start
@@ -104,6 +114,7 @@ Na primeira execução, um QR Code será exibido no terminal. Escaneie pelo What
 ```bash
 pkg update && pkg upgrade -y && \
 pkg install git nodejs ffmpeg imagemagick -y && \
+npm install -g qrcode-terminal && \
 git clone https://github.com/BunnyGhost/Hermione-Bot.git && \
 cd Hermione-Bot && \
 npm install --ignore-scripts && \
@@ -132,6 +143,7 @@ npm start
 | `nodejs` | Runtime JavaScript — o motor que me faz funcionar |
 | `ffmpeg` | Processa e converte áudios e vídeos |
 | `imagemagick` | Manipula imagens e gera figurinhas ✨ |
+| `qrcode-terminal` | Renderiza o QR Code direto no terminal para vincular o WhatsApp |
 
 ---
 
