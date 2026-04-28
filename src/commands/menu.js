@@ -39,8 +39,6 @@ ${readMore}
 ╭─────Commands──────
 │ ${config.PREFIX}menu 
 > Exibe este menu
-│ TesteJS 
-> Mostra um segredo
 │ ${config.PREFIX}ping 
 > Testa a resposta e latência do bot.
 ╰──────────────────⪨
