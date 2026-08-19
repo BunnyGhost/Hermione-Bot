@@ -669,9 +669,6 @@ git push origin feat/nome-da-feature
 - 🐙 **GitHub:** [github.com/BunnyGhost](https://github.com/BunnyGhost)
 - 🐛 **Reportar bug:** [Abrir uma issue](https://github.com/BunnyGhost/Hermione-Bot/issues/new)
 
-<br/>
-
----
 
 <br/>
 
