@@ -90,22 +90,36 @@ function logButton(clickedId, from, message) {
 // Limpa o terminal e exibe o logo + cabeçalho da tabela de logs
 function printHeader() {
   console.clear();
-  console.log(`
+console.log(`
 \x1b[38;5;198m██╗  ██╗███████╗██████╗ ███╗   ███╗██╗ ██████╗ ███╗   ██╗███████╗\x1b[0m
 \x1b[38;5;199m██║  ██║██╔════╝██╔══██╗████╗ ████║██║██╔═══██╗████╗  ██║██╔════╝\x1b[0m
 \x1b[38;5;200m███████║█████╗  ██████╔╝██╔████╔██║██║██║   ██║██╔██╗ ██║█████╗  \x1b[0m
 \x1b[38;5;201m██╔══██║██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║   ██║██║╚██╗██║██╔══╝  \x1b[0m
 \x1b[38;5;207m██║  ██║███████╗██║  ██║██║ ╚═╝ ██║██║╚██████╔╝██║ ╚████║███████╗\x1b[0m
 \x1b[38;5;218m╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝\x1b[0m
+\x1b[38;5;198m⢸⣿⣿⣿⣿⠃⠄⢀⣴⡾⠃⠄⠄⠄⠄⠄⠈⠺⠟⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣶⣤⡀⠄\x1b[0m
+\x1b[38;5;199m⢸⣿⣿⣿⡟⢀⣴⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣷\x1b[0m
+\x1b[38;5;200m⢸⣿⣿⠟⣴⣿⡿⡟⡼⢹⣷⢲⡶⣖⣾⣶⢄⠄⠄⠄⠄⠄⢀⣼⣿⢿⣿⣿⣿⣿⣿⣿⣿\x1b[0m
+\x1b[38;5;201m⢸⣿⢫⣾⣿⡟⣾⡸⢠⡿⢳⡿⠍⣼⣿⢏⣿⣷⢄⡀⠄⢠⣾⢻⣿⣸⣿⣿⣿⣿⣿⣿⣿\x1b[0m
+\x1b[38;5;207m⡿⣡⣿⣿⡟⡼⡁⠁⣰⠂⡾⠉⢨⣿⠃⣿⡿⠍⣾⣟⢤⣿⢇⣿⢇⣿⣿⢿⣿⣿⣿⣿⣿\x1b[0m
+\x1b[38;5;218m⣱⣿⣿⡟⡐⣰⣧⡷⣿⣴⣧⣤⣼⣯⢸⡿⠁⣰⠟⢀⣼⠏⣲⠏⢸⣿⡟⣿⣿⣿⣿⣿⣿\x1b[0m
+\x1b[38;5;198m⣿⣿⡟⠁⠄⠟⣁⠄⢡⣿⣿⣿⣿⣿⣿⣦⣼⢟⢀⡼⠃⡹⠃⡀⢸⡿⢸⣿⣿⣿⣿⣿⡟\x1b[0m
+\x1b[38;5;199m⣿⣿⠃⠄⢀⣾⠋⠓⢰⣿⣿⣿⣿⣿⣿⠿⣿⣿⣾⣅⢔⣕⡇⡇⡼⢁⣿⣿⣿⣿⣿⣿⢣\x1b[0m
+\x1b[38;5;200m⣿⡟⠄⠄⣾⣇⠷⣢⣿⣿⣿⣿⣿⣿⣿⣭⣀⡈⠙⢿⣿⣿⡇⡧⢁⣾⣿⣿⣿⣿⣿⢏⣾\x1b[0m
+\x1b[38;5;201m⣿⡇⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢻⠇⠄⠄⢿⣿⡇⢡⣾⣿⣿⣿⣿⣿⣏⣼⣿\x1b[0m
+\x1b[38;5;207m⣿⣷⢰⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⢰⣧⣀⡄⢀⠘⡿⣰⣿⣿⣿⣿⣿⣿⠟⣼⣿⣿\x1b[0m
+\x1b[38;5;218m⢹⣿⢸⣿⣿⠟⠻⢿⣿⣿⣿⣿⣿⣿⣿⣶⣭⣉⣤⣿⢈⣼⣿⣿⣿⣿⣿⣿⠏⣾⣹⣿⣿\x1b[0m
+\x1b[38;5;198m⢸⠇⡜⣿⡟⠄⠄⠄⠈⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟⣱⣻⣿⣿⣿⣿⣿⠟⠁⢳⠃⣿⣿⣿\x1b[0m
+\x1b[38;5;199m⠄⣰⡗⠹⣿⣄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⠟⣅⣥⣿⣿⣿⣿⠿⠋⠄⠄⣾⡌⢠⣿⡿⠃\x1b[0m
+\x1b[38;5;200m⠜⠋⢠⣷⢻⣿⣿⣶⣾⣿⣿⣿⣿⠿⣛⣥⣾⣿⠿⠟⠛⠉⠄⠄\x1b[0m  \x1b[38;5;213m╭────────────────────────────╮\x1b[0m
+                                              \x1b[38;5;213m│  🟢 CONECTADO COM SUCESSO! │\x1b[0m
+                                              \x1b[38;5;213m╰────────────────────────────╯\x1b[0m
 \x1b[35m         🤖 Bot WhatsApp by Bunny Ghost 🤖         \x1b[0m`);
-
-  console.log(`\n${C.green}  🟢 CONECTADO COM SUCESSO!${C.reset}`);
-  console.log(`${C.blue}  🤖 Bot pronto para receber mensagens!${C.reset}\n`);
-
-  const LINHA = "─".repeat(85);
-  console.log(`${C.gray}  ${LINHA}`);
-  console.log(`  ${"[Hora]".padEnd(10)}${"Origem".padEnd(12)}${"Nome".padEnd(18)}${"Telefone".padEnd(17)}${"→  Mensagem"}`);
-  console.log(`  ${LINHA}${C.reset}\n`);
+console.log(`${C.blue}  🤖 Bot pronto para receber mensagens!${C.reset}\n`);
+const LINHA = "─".repeat(85);
+console.log(`${C.gray}  ${LINHA}`);
+console.log(`  ${"[Hora]".padEnd(10)}${"Origem".padEnd(12)}${"Nome".padEnd(18)}${"Telefone".padEnd(17)}${"→  Mensagem"}`);
+console.log(`  ${LINHA}${C.reset}\n`);
 }
 
 // ============================================================
