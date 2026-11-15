@@ -6,7 +6,7 @@
 
 <p align="center">
   <i>Nya~! Olá, eu sou a Hermione!</i><br/>
-Sua assistente para WhatsApp: stickers, revelação de mídias e várias utilidades. 
+Sua assistente para WhatsApp: stickers, revelação de mídias, downloads de vídeos, previsão do tempo e várias utilidades. 
 </p>
 
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=bd93f9)](https://nodejs.org)
@@ -23,7 +23,7 @@ Sua assistente para WhatsApp: stickers, revelação de mídias e várias utilida
 ## 🌸 O que é a Hermione Bot?
 
 **Hermione Bot** é uma assistente para WhatsApp com personalidade inspirada em animes, fofa, eficiente e repleta de funcionalidades. Desenvolvida com [Baileys](https://github.com/WhiskeySockets/Baileys), conecta direto ao seu WhatsApp **sem API paga, sem número extra e sem burocracia**. Só o QR Code e a magia começa. ✨
-Ela cria **stickers** instantâneos, revela **mídias de visualização única**, expõe a **foto de perfil de qualquer membro de grupo**, realiza **consultas OSINT de IP com geolocalização** e muito mais, tudo via comandos simples no chat.
+Ela cria **stickers** instantâneos, revela **mídias de visualização única**, **baixa vídeos** do YouTube, Pinterest, Instagram e TikTok, mostra a **previsão do tempo** da sua cidade, expõe a **foto de perfil de qualquer membro de grupo**, realiza **consultas OSINT de IP com geolocalização** e muito mais, tudo via comandos simples no chat.
 
 É o projeto ideal para quem busca automatizar tarefas, gerenciar grupos ou simplesmente ter uma assistente inteligente para uso pessoal.
 
@@ -40,12 +40,12 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 
 | `#` | Seção | Descrição |
 |:---:|:---|:---|
-| `01` | **[Instalação de Dependências](#-passo-1--instalar-as-dependências)** | Instalando Node.js, Git e npm do zero |
+| `01` | **[Instalação de Dependências](#-passo-1--instalar-as-dependências)** | Instalando Node.js, Git, yt-dlp e ffmpeg do zero |
 | `02` | **[Baixar o Projeto](#-passo-2--baixar-o-projeto)** | Clonando o repositório e instalando os pacotes |
 | `03` | **[Iniciar a Hermione](#️-passo-3--iniciar-a-hermione)** | Rodando o bot e conectando via QR Code |
 | `04` | **[Configuração](#️-configuração)** | Prefixo, nome do bot e imagens necessárias |
 | `05` | **[Recursos](#-recursos)** | Tudo que a Hermione é capaz de fazer |
-| `06` | **[Comandos](#-comandos)** | Lista completa de comandos disponíveis |
+| `06` | **[Comandos](#-comandos)** | Lista completa de comandos e como usar cada um |
 | `07` | **[Estrutura do Projeto](#-estrutura-do-projeto)** | Organização de pastas e arquivos |
 | `08` | **[Manter Online 24/7](#-manter-o-bot-online-247)** | Rodando em segundo plano com PM2 |
 | `09` | **[Resetar Sessão](#-resetar-a-sessão)** | Deslogar e conectar outra conta |
@@ -78,7 +78,11 @@ Ela cria **stickers** instantâneos, revela **mídias de visualização única**
 | **Node.js** | v18 ou superior *(v20 recomendado)* | [nodejs.org/pt](https://nodejs.org/pt) |
 | **Git** | Qualquer versão recente | [git-scm.com](https://git-scm.com) |
 | **npm** | v9 ou superior | ✅ Já vem junto com o Node.js |
+| **yt-dlp** | Versão mais recente | [github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp#installation) |
+| **ffmpeg** | Qualquer versão recente | [ffmpeg.org](https://ffmpeg.org/download.html) |
 | **WhatsApp** | Conta ativa no celular | — |
+
+> 💡 O **yt-dlp** é o programa que baixa os vídeos (`/yt`, `/pin`, `/insta`, `/tiktok`) e o **ffmpeg** converte vídeos e áudios (stickers animados e downloads). Sem eles o bot liga normalmente, mas esses comandos não funcionam.
 
 <br/>
 
@@ -144,7 +148,50 @@ sudo dnf install git
 
 <br/>
 
-### 3. Verificar se está tudo certo
+### 3. Instalar o yt-dlp e o ffmpeg
+
+> Essas duas ferramentas são usadas pelos comandos de download. Elas **não** vêm no `npm install`, por isso precisam ser instaladas separadas.
+
+**Windows** *(PowerShell ou cmd)*:
+
+```bash
+winget install yt-dlp
+winget install ffmpeg
+```
+
+**Mac** *(com [Homebrew](https://brew.sh))*:
+
+```bash
+brew install yt-dlp ffmpeg
+```
+
+<details>
+<summary>🐧 <b>Linux — instalar pelo terminal</b></summary>
+
+<br/>
+
+```bash
+# Arch / Manjaro
+sudo pacman -S yt-dlp ffmpeg
+
+# Debian / Ubuntu / Mint
+sudo apt update && sudo apt install -y ffmpeg
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
+
+# Fedora
+sudo dnf install ffmpeg-free
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
+```
+
+> ⚠️ Em Debian/Ubuntu o `yt-dlp` do `apt` costuma ser antigo e quebra com frequência. Por isso o comando acima baixa o binário oficial direto do GitHub.
+
+</details>
+
+<br/>
+
+### 4. Verificar se está tudo certo
 
 Com o terminal aberto, cole esses comandos **um por vez** e pressione `Enter` após cada um:
 
@@ -160,12 +207,22 @@ npm -v
 git --version
 ```
 
+```bash
+yt-dlp --version
+```
+
+```bash
+ffmpeg -version
+```
+
 Se aparecer um número de versão em cada um, como nos exemplos abaixo, está tudo certo! ✅
 
 ```
 v20.11.0            ← node -v
 10.2.4              ← npm -v
 git version 2.43.0  ← git --version
+2025.01.15          ← yt-dlp --version
+ffmpeg version 6.1  ← ffmpeg -version
 ```
 
 Se aparecer **"comando não encontrado"** ou **"is not recognized"**, a ferramenta não foi instalada corretamente — volte e reinstale antes de continuar.
@@ -224,12 +281,13 @@ Pode demorar alguns minutos dependendo da sua internet. Quando terminar, uma pas
 | `@whiskeysockets/baileys` | Motor principal — conecta ao WhatsApp Multi-Device |
 | `wa-sticker-formatter` | Cria e formata as figurinhas |
 | `sharp` | Processa imagens (redimensionar, converter, etc.) |
-| `fluent-ffmpeg` | Processa vídeos e áudios |
+| `fluent-ffmpeg` | Processa vídeos e áudios (usa o ffmpeg do Passo 1) |
 | `qrcode-terminal` | Exibe o QR Code de login no terminal |
 | `pino` | Sistema de logs — mantém o terminal limpo |
-| `baileys_helpers` | Utilitários para botões interativos |
-| `axios` | Faz requisições HTTP para APIs externas |
+| `axios` | Faz requisições HTTP para APIs externas (clima, IP, etc.) |
 | `nodemon` | *(dev)* Reinicia o bot automaticamente ao salvar arquivos |
+
+> 📥 O **yt-dlp** não aparece aqui porque não é um pacote do npm — ele é um programa instalado no sistema (Passo 1) e o bot o chama pelo terminal.
 
 </details>
 
@@ -291,10 +349,22 @@ Após escanear, o terminal vai exibir o banner e começar a logar as mensagens e
 ██╔══██║██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║   ██║██║╚██╗██║██╔══╝
 ██║  ██║███████╗██║  ██║██║ ╚═╝ ██║██║╚██████╔╝██║ ╚████║███████╗
 ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
-
-              Bot WhatsApp by Bunny Ghost
-
-  🟢 CONECTADO COM SUCESSO!
+⢸⣿⣿⣿⣿⠃⠄⢀⣴⡾⠃⠄⠄⠄⠄⠄⠈⠺⠟⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣶⣤⡀⠄
+⢸⣿⣿⣿⡟⢀⣴⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣷
+⢸⣿⣿⠟⣴⣿⡿⡟⡼⢹⣷⢲⡶⣖⣾⣶⢄⠄⠄⠄⠄⠄⢀⣼⣿⢿⣿⣿⣿⣿⣿⣿⣿
+⢸⣿⢫⣾⣿⡟⣾⡸⢠⡿⢳⡿⠍⣼⣿⢏⣿⣷⢄⡀⠄⢠⣾⢻⣿⣸⣿⣿⣿⣿⣿⣿⣿
+⡿⣡⣿⣿⡟⡼⡁⠁⣰⠂⡾⠉⢨⣿⠃⣿⡿⠍⣾⣟⢤⣿⢇⣿⢇⣿⣿⢿⣿⣿⣿⣿⣿
+⣱⣿⣿⡟⡐⣰⣧⡷⣿⣴⣧⣤⣼⣯⢸⡿⠁⣰⠟⢀⣼⠏⣲⠏⢸⣿⡟⣿⣿⣿⣿⣿⣿
+⣿⣿⡟⠁⠄⠟⣁⠄⢡⣿⣿⣿⣿⣿⣿⣦⣼⢟⢀⡼⠃⡹⠃⡀⢸⡿⢸⣿⣿⣿⣿⣿⡟
+⣿⣿⠃⠄⢀⣾⠋⠓⢰⣿⣿⣿⣿⣿⣿⠿⣿⣿⣾⣅⢔⣕⡇⡇⡼⢁⣿⣿⣿⣿⣿⣿⢣
+⣿⡟⠄⠄⣾⣇⠷⣢⣿⣿⣿⣿⣿⣿⣿⣭⣀⡈⠙⢿⣿⣿⡇⡧⢁⣾⣿⣿⣿⣿⣿⢏⣾
+⣿⡇⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢻⠇⠄⠄⢿⣿⡇⢡⣾⣿⣿⣿⣿⣿⣏⣼⣿
+⣿⣷⢰⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⢰⣧⣀⡄⢀⠘⡿⣰⣿⣿⣿⣿⣿⣿⠟⣼⣿⣿
+⢹⣿⢸⣿⣿⠟⠻⢿⣿⣿⣿⣿⣿⣿⣿⣶⣭⣉⣤⣿⢈⣼⣿⣿⣿⣿⣿⣿⠏⣾⣹⣿⣿  ╭────────────────────────────╮
+⢸⠇⡜⣿⡟⠄⠄⠄⠈⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟⣱⣻⣿⣿⣿⣿⣿⠟⠁⢳⠃⣿⣿⣿  │  🟢 CONECTADO COM SUCESSO! │
+⠄⣰⡗⠹⣿⣄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⠟⣅⣥⣿⣿⣿⣿⠿⠋⠄⠄⣾⡌⢠⣿⡿⠃  ╰────────────────────────────╯
+⠜⠋⢠⣷⢻⣿⣿⣶⣾⣿⣿⣿⣿⠿⣛⣥⣾⣿⠿⠟⠛⠉⠄⠄
+                                    WhatsApp Bot by: Bunny Ghost         
   🤖 Bot pronto para receber mensagens!
 ```
 ```
@@ -303,9 +373,12 @@ Após escanear, o terminal vai exibir o banner e começar a logar as mensagens e
 ──────────────────────────────────────────────────────────────────────
 [14:23:01]  Privado   Maria Silva       5511999999999   →  Oi Hermione! Tudo bem?
 [14:23:05]  Grupo     Amigos da Facu    5511888888888   →  Alguém viu o dever?
-[14:23:12]  Botão     João Pedro        5511777777777   →  /menu
+[14:23:12]  Botão     João Pedro        5511777777777   →  cmd_menu
 [14:23:15]  Privado   Você              5511999999999   →  /s
+[14:23:20]  🚩 [APAGADA]  Maria Silva   5511999999999
 ```
+
+> 🚩 A linha **[APAGADA]** aparece quando alguém apaga uma mensagem. A Hermione só avisa no terminal que isso aconteceu — ela **não guarda** o conteúdo das mensagens.
 
  ## Pronto agora Hermione Bot já esta rodando!
  
@@ -319,7 +392,11 @@ Após escanear, o terminal vai exibir o banner e começar a logar as mensagens e
 
 > ✅ **Da segunda vez em diante**, a Hermione se conecta sozinha — sem precisar escanear de novo! A sessão fica salva na pasta `auth_info_baileys/`.
 
-> 💡 Todos os logs são coloridos no terminal graças ao `chalk` — fica fácil de acompanhar tudo em tempo real!
+> ⚡ **Boot rápido:** ao ligar, a Hermione ignora todas as mensagens enviadas **antes** dela ficar online. Assim ela não responde comandos antigos e não demora para começar.
+
+> 🛡️ **Anti-ban:** para evitar bloqueios do WhatsApp, a Hermione espera **1 segundo** entre cada resposta. Se muita gente mandar comando ao mesmo tempo, elas entram numa fila e são respondidas uma por uma.
+
+> 💡 Todos os logs são coloridos no terminal usando cores ANSI — fica fácil de acompanhar tudo em tempo real!
 
 Se a conexão cair, o bot tenta se reconectar automaticamente:
 
@@ -375,11 +452,13 @@ A pasta `src/assets/` precisa ter esses arquivos:
 ```
 src/assets/
 ├── menu2.jpg     →  imagem exibida no /menu
-├── tumb.jpeg    →  thumbnail do link preview
+├── tumb.jpeg     →  thumbnail do link preview
 └── image.png     →  foto de apresentação do /bot
 ```
 
 > ⚠️ Você pode trocar por qualquer imagem que quiser — só mantenha os mesmos nomes de arquivo!
+
+> 💡 Os caminhos das imagens ficam todos juntos no objeto `ASSETS` do `src/index.js`. Se quiser usar outros nomes, é só editar ali.
 
 <br/>
 
@@ -393,12 +472,18 @@ src/assets/
 |---|---|---|
 | 🖼️ | **Stickers instantâneos** | Converte imagens e vídeos em figurinhas do WhatsApp |
 | 🔓 | **Desbloqueio de mídias** | Converte mídias de visualização única em mídias normais |
+| 📥 | **Downloader de vídeos** | Baixa vídeos do YouTube, Pinterest, Instagram e TikTok via yt-dlp |
+| 🌦️ | **Previsão do tempo** | Mostra o clima de hoje e de amanhã da cidade que você escolher |
+| 📖 | **Ajuda por comando** | `/help` explica como usar cada comando |
 | 🌀 | **Botões interativos** | Menus clicáveis nativos do WhatsApp |
 | 🎵 | **Envio de áudio** | Envia áudios diretamente pelo bot |
 | 📇 | **Foto do perfil** | Envia a foto de perfil do usuário marcado |
 | 🌐 | **Consulta OSINT** | Consulta informações básicas de um IP |
 | 🎨 | **Painel no terminal** | Interface colorida com logs em tempo real |
-| ⚡ | **Reconexão automática** | Reconecta automaticamente se a conexão cair |
+| 🚩 | **Aviso de mensagem apagada** | Avisa no terminal quando alguém apaga uma mensagem |
+| ⚡ | **Boot rápido** | Ignora mensagens antigas e liga em poucos segundos |
+| 🛡️ | **Anti-ban** | Intervalo de 1s entre as respostas para proteger o número |
+| 🔁 | **Reconexão automática** | Reconecta automaticamente se a conexão cair |
 | 🧩 | **Modular e extensível** | Estrutura fácil para adicionar novos comandos |
 <br/>
 
@@ -414,13 +499,66 @@ src/assets/
 |---|---|
 | `/bot` | Exibe a apresentação da Hermione com menu interativo |
 | `/menu` | Mostra o menu visual completo |
+| `/help` | Explica como usar um comando (ex: `/help clima`) |
 | `/ping` | Exibe o tempo de resposta do bot |
 | `/s` | Converte a mídia em figurinha |
 | `/au` | Envia um áudio |
 | `/hidden` | Converte mídia de visualização única em mídia normal |
+| `/yt` | Baixa um vídeo do YouTube |
+| `/pin` | Baixa um vídeo ou imagem do Pinterest |
+| `/insta` | Baixa um vídeo do Instagram |
+| `/tiktok` | Baixa um vídeo do TikTok |
+| `/clima` | Mostra a previsão do tempo de hoje e de amanhã |
 | `/who` | Consulta dados de registro (Whois) de um IP |
 | `/ctt` | Envia a foto de perfil do usuário mencionado |
 | `/infos` | Exibe informações técnicas do bot |
+
+<br/>
+
+### Como usar os comandos novos
+
+**📥 Downloads** — mande o comando seguido do link do vídeo:
+
+```
+/yt https://www.youtube.com/watch?v=XXXXXXXXXXX
+/pin https://br.pinterest.com/pin/XXXXXXXXXXX
+/insta https://www.instagram.com/reel/XXXXXXXXXXX
+/tiktok https://www.tiktok.com/@usuario/video/XXXXXXXXXXX
+```
+
+> ⏳ Dependendo do tamanho do vídeo, o download pode levar alguns segundos. A Hermione envia o arquivo assim que terminar.
+
+> ⚠️ Vídeos privados ou de contas fechadas não podem ser baixados.
+
+<br/>
+
+**🌦️ Clima** — mande o comando com o nome da **cidade** e a sigla do **estado (UF)**:
+
+```
+/clima campinas sp
+/clima rio de janeiro rj
+```
+
+A Hermione responde com a previsão de **hoje** e de **amanhã**.
+
+<br/>
+
+**📖 Ajuda** — não lembra como usar algum comando? Pergunte para a Hermione:
+
+```
+/help            ← lista os comandos
+/help clima      ← explica o /clima
+/help yt         ← explica o /yt
+```
+
+<br/>
+
+**🖼️ Sticker e 🔓 Hidden** — ambos funcionam **respondendo (reply)** a uma mídia:
+
+```
+① Segure a imagem/vídeo no chat e toque em "Responder"
+② Digite /s (figurinha) ou /hidden (revelar visualização única)
+```
 
 <br/>
 
@@ -435,28 +573,35 @@ Hermione-Bot/
 │
 ├── src/
 │   │
-│   ├── index.js                ← 🚀 ponto de entrada — inicializa tudo
+│   ├── index.js                ← 🚀 ponto de entrada — conexão, logs e hub de comandos
 │   ├── config.js               ← ⚙️  configurações globais (prefix, nome, etc.)
 │   │
 │   ├── assets/                 ← 🖼️  imagens usadas pelos comandos
 │   │   ├── menu2.jpg
-│   │   ├── flor1.jpeg
+│   │   ├── tumb.jpeg
 │   │   └── image.png
 │   │
 │   └── commands/               ← 🔮 cada arquivo = um comando
 │       ├── audio.js            ←    /au
 │       ├── buttonHandler.js    ←    captura cliques em botões
 │       ├── ctt.js              ←    /ctt
+│       ├── downloader.js       ←    /yt /pin /insta /tiktok (yt-dlp)
+│       ├── help.js             ←    /help
 │       ├── hidden.js           ←    /hidden
 │       ├── info.js             ←    /infos
 │       ├── menu.js             ←    /menu
 │       ├── sticker.js          ←    /s
+│       ├── weather.js          ←    /clima
 │       └── who.js              ←    /who
 │
 ├── auth_info_baileys/          ← 🔐 sessão salva (gerada automaticamente)
 ├── package.json                ← 📦 dependências e scripts npm
 └── .gitignore                  ← 🙈 arquivos ignorados pelo Git
 ```
+
+<br/>
+
+> 🧩 **Como adicionar um comando novo:** crie um arquivo em `src/commands/`, importe ele no topo do `src/index.js` e adicione um `if (command === "nome")` dentro da função `runCommand`. É só seguir o mesmo padrão dos outros. ✨
 
 <br/>
 
@@ -492,6 +637,8 @@ pm2 startup                   # configura para iniciar com o sistema
 ```
 
 > 💡 Para hospedar na nuvem, serviços como **Railway**, **Render** ou qualquer **VPS Linux** funcionam perfeitamente. O PM2 não é necessário nesses casos — o próprio serviço gerencia o processo.
+
+> ⚠️ Em hospedagens na nuvem, lembre de instalar também o **yt-dlp** e o **ffmpeg** no servidor, senão os comandos de download não funcionam.
 
 <br/>
 
@@ -548,6 +695,42 @@ npm install sharp
 sudo apt-get install libvips-dev
 ```
 
+Para figurinhas animadas (vídeo/GIF), confirme também que o `ffmpeg` está instalado: `ffmpeg -version`
+
+</details>
+
+<details>
+<summary><b>⚠️ Os downloads (/yt, /pin, /insta, /tiktok) não funcionam</b></summary>
+<br/>
+
+Confira nesta ordem:
+
+```bash
+# 1. O yt-dlp está instalado?
+yt-dlp --version
+
+# 2. O ffmpeg está instalado?
+ffmpeg -version
+
+# 3. Atualize o yt-dlp (os sites mudam e versões antigas quebram)
+yt-dlp -U
+```
+
+- **"yt-dlp: command not found"** → volte ao [Passo 1](#-passo-1--instalar-as-dependências) e instale o yt-dlp
+- **Funcionava e parou do nada** → quase sempre é o yt-dlp desatualizado, rode `yt-dlp -U` (ou reinstale pelo gerenciador do seu sistema)
+- **Vídeo não baixa** → confirme que o link está completo e que o vídeo não é privado
+- **Arquivo muito grande** → o WhatsApp limita o tamanho dos arquivos enviados, vídeos muito longos podem falhar
+
+</details>
+
+<details>
+<summary><b>⚠️ O /clima não encontra a minha cidade</b></summary>
+<br/>
+
+- Escreva o comando no formato `/clima cidade UF`, por exemplo `/clima campinas sp`
+- Confira se o nome da cidade está escrito corretamente
+- Sempre inclua a sigla do estado no final
+
 </details>
 
 <details>
@@ -592,6 +775,31 @@ Ocorre quando o WhatsApp encerra a sessão remotamente (ex: você usou o WhatsAp
 rm -rf auth_info_baileys/
 npm start
 ```
+
+</details>
+
+<details>
+<summary><b>👀 Aparecem vários "Closing session: SessionEntry {...}" no terminal</b></summary>
+<br/>
+
+Fique tranquilo, **isso não é um erro**. É um log interno da biblioteca de criptografia do WhatsApp (libsignal), que aparece quando o bot renova as chaves de segurança com algum contato — por exemplo, quando ele troca de aparelho ou quando o bot acabou de ligar.
+
+Só vale investigar se aparecer **sem parar** junto com erros como `Bad MAC` ou `No session found`. Nesse caso:
+
+- Confira se não há **duas cópias do bot** rodando ao mesmo tempo com a mesma pasta `auth_info_baileys/`
+- Se continuar, pare o bot, delete `auth_info_baileys/` e escaneie o QR Code de novo
+
+> 🔐 Esses logs mostram chaves privadas da sessão. **Nunca** cole essa saída em prints, issues ou grupos.
+
+</details>
+
+<details>
+<summary><b>🐢 O bot está demorando para ligar</b></summary>
+<br/>
+
+- Se você veio de uma versão antiga, apague a pasta `data/` (ela guardava um cache de mídias que a Hermione não usa mais)
+- Confira se não há outra cópia do bot rodando: `ps aux | grep node` (Linux / macOS)
+- Se tiver centenas de arquivos dentro de `auth_info_baileys/`, resetar a sessão (veja [Resetar a Sessão](#-resetar-a-sessão)) deixa tudo mais leve
 
 </details>
 
@@ -683,6 +891,7 @@ A Hermione Bot só existe graças à incrível comunidade open source que transf
 
 - Todos os mantenedores e contribuidores que mantêm projetos vivos por pura paixão
 - A equipe do **Baileys** (e suas forks incansáveis) — os verdadeiros magos por trás da conexão sem API paga
+- Os mantenedores do **yt-dlp** e do **ffmpeg**, que fazem os downloads e as conversões de vídeo acontecerem
 - Os criadores de **wa-sticker-formatter**, **sharp**, **fluent-ffmpeg**, **axios** e tantas outras bibliotecas que dão vida às figurinhas, vídeos e respostas instantâneas
 - Toda a comunidade **Node.js / JavaScript**, que mantém esse ecossistema poderoso, atualizado e acessível a todos
 - E especialmente a **você**, que chegou até aqui, testou, usou, deu estrela ou apenas sorriu com uma resposta da Hermione ♡
