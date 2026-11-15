@@ -32,10 +32,10 @@ pkg update && pkg upgrade -y
 
 ### 2. Instalar as dependências do sistema
 
-Instala as quatro ferramentas que o bot precisa para funcionar: `git`, `nodejs`, `ffmpeg` e `imagemagick`.
+Instala as ferramentas que o bot precisa para funcionar: `git`, `nodejs`, `ffmpeg`, `imagemagick` e `yt-dlp` (esse último é quem baixa os vídeos dos comandos `/yt`, `/pin`, `/insta` e `/tiktok`).
 
 ```bash
-pkg install git nodejs ffmpeg imagemagick -y
+pkg install git nodejs ffmpeg imagemagick yt-dlp -y
 ```
 
 <br/>
@@ -98,6 +98,8 @@ npm start
 
 Na primeira execução, um QR Code será exibido no terminal. Escaneie pelo WhatsApp em **Dispositivos vinculados → Vincular um dispositivo**. Da segunda vez em diante, a conexão é feita automaticamente. ✅
 
+> 💡 **Dica:** o Android costuma "dormir" o Termux quando a tela apaga, e aí eu fico offline. Para evitar isso, rode `termux-wake-lock` **antes** do `npm start` (ou use a opção *Acquire wakelock* na notificação do Termux).
+
 ---
 
 ## ⚡ Com pressa? Tudo de uma vez!?
@@ -113,7 +115,7 @@ Na primeira execução, um QR Code será exibido no terminal. Escaneie pelo What
 
 ```bash
 pkg update && pkg upgrade -y && \
-pkg install git nodejs ffmpeg imagemagick -y && \
+pkg install git nodejs ffmpeg imagemagick yt-dlp -y && \
 npm install -g qrcode-terminal && \
 git clone https://github.com/BunnyGhost/Hermione-Bot.git && \
 cd Hermione-Bot && \
@@ -143,6 +145,7 @@ npm start
 | `nodejs` | Runtime JavaScript — o motor que me faz funcionar |
 | `ffmpeg` | Processa e converte áudios e vídeos |
 | `imagemagick` | Manipula imagens e gera figurinhas ✨ |
+| `yt-dlp` | Baixa os vídeos do YouTube, Pinterest, Instagram e TikTok (`/yt` `/pin` `/insta` `/tiktok`) 📥 |
 | `qrcode-terminal` | Renderiza o QR Code direto no terminal para vincular o WhatsApp |
 
 ---
@@ -187,9 +190,45 @@ npm start
 
 </details>
 
+<details>
+<summary><b>⚠️ Os downloads (/yt, /pin, /insta, /tiktok) não funcionam</b></summary>
+<br/>
+
+Confirme que o yt-dlp está instalado e atualizado (os sites mudam e versões antigas quebram):
+
+```bash
+yt-dlp --version
+pkg upgrade yt-dlp -y
+```
+
+Se aparecer "command not found", instale com:
+
+```bash
+pkg install yt-dlp -y
+```
+
+Se der "package not found", rode `pkg update` e tente de novo.
+
+</details>
+
+<details>
+<summary><b>⚠️ O bot fica offline quando a tela do celular apaga</b></summary>
+<br/>
+
+O Android pausa apps em segundo plano para economizar bateria. Antes de iniciar o bot, rode:
+
+```bash
+termux-wake-lock
+npm start
+```
+
+Se ainda assim ele cair, nas configurações do Android desative a **otimização de bateria** para o Termux.
+
+</details>
+
 ---
 
 <div align="center">
-  <p>*✨ Obrigada pela preferência — foi um prazer te guiar até aqui! ✨*</p>
+  <p><i>✨ Obrigada pela preferência — foi um prazer te guiar até aqui! ✨</i></p>
   <img src="https://i.pinimg.com/originals/3c/bd/17/3cbd17367fe4a8af86308840a931a73a.gif" width="600" alt="Agradecimento" />
 </div>
